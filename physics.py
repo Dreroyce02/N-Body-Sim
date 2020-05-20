@@ -1,6 +1,6 @@
 import math
 
-G = 1
+G = 100
 
 class Body:
 
