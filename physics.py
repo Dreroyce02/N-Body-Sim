@@ -25,7 +25,7 @@ def mag(p1, p2):
 
 def gForce(b1, b2, dt):
     p1, m1 = b1.p, b1.m
-    p2, m2 = b2.p, b1.m2
+    p2, m2 = b2.p, b1.m
     r = [p2[0]-p1[0], p2[1]-p1[1]]
     r_mag = mag(p1, p2)
     F = [((G*m1*m2)/(math.pow(r_mag, 3)))*r[0],
@@ -35,13 +35,8 @@ def gForce(b1, b2, dt):
     b1.mom[1] = F[1]*dt+b1.mom[1]
         
 def test():
-    b1 = Body(20, [10, 20], [0, 0])
-    b2 = Body(100, [70, -10], [0, 0])
-    gForce = (b1, b2, .001)
-    gForce = (b2, b1, .001)
-    b1.vmove(.001)
-    b2.vmove(.001)
-    print(b1.p, b2.p)
+    pass
+    
 
 if __name__=='__main__':
     test()
