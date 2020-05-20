@@ -1,0 +1,1 @@
+C:\Code_Projects\N-Body-Sim\Python\Scripts\activate.bat
