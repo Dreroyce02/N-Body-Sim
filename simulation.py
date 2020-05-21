@@ -5,17 +5,17 @@ n_of_bodies = 4
 dt = .00001
 bodies = []
 
-for thing in range(n_of_bodies):
-    b = Body(random.randint(1, 100),
-             [random.randint(-100,100), random.randint(-100,100)],
-             [random.randint(-100,100), random.randint(-100,100)]
-             )
-    bodies.append(b)
+def objList():
+    for thing in range(n_of_bodies):
+        b = Body(random.randint(1, 100),
+                 [random.randint(-100,100), random.randint(-100,100)],
+                 [random.randint(-100,100), random.randint(-100,100)]
+                 )
+        bodies.append(b)
+    for body in bodies:
+        print(body.m, body.p, body.mom)
 
-for body in bodies:
-    print(body.m, body.p, body.mom)
-
-while True:
+def simulate():
     for body in bodies:
         b_i = bodies.index(body)
         bodies_2 = bodies[b_i+1:n_of_bodies-1]
@@ -23,5 +23,13 @@ while True:
             gForce(body, b, dt)
     for body in bodies:
         body.vmove(dt)
-
+    return bodies
      
+def test():
+    objList()
+    simulate()
+    for body in bodies:
+        print(body.m, body.p, body.mom)
+
+if __name__=='__main__':
+    test()
