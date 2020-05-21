@@ -1,7 +1,7 @@
 from physics import Body, gForce
 import random
 
-n_of_bodies = 10
+n_of_bodies = 4
 dt = .00001
 bodies = []
 
@@ -12,6 +12,9 @@ for thing in range(n_of_bodies):
              )
     bodies.append(b)
 
+for body in bodies:
+    print(body.m, body.p, body.mom)
+
 while True:
     for body in bodies:
         b_i = bodies.index(body)
@@ -21,5 +24,4 @@ while True:
     for body in bodies:
         body.vmove(dt)
 
-    print(bodies[0].p)
-        
+     
