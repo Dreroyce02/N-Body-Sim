@@ -1,3 +1,3 @@
 from simulation import objList, simulate
-import gizeh
+import tkinter as tk
 
