@@ -3,7 +3,7 @@ import pygame
 import sys
 pygame.init()
 
-size = width, height = 500, 500
+size = width, height = 700, 700
 black = 0, 0, 0
 space = pygame.display.set_mode(size)
 pygame.display.set_caption("Space")
@@ -12,6 +12,8 @@ pygame.display.set_icon(icon)
 
 ball = pygame.image.load("ball.png")
 body_list = objList()
+for body in body_list:
+    print(body.m, body.p, body.mom)
 
 while True:
     for event in pygame.event.get():

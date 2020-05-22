@@ -1,7 +1,8 @@
 from physics import Body, gForce
 import random
 
-n_of_bodies = 8
+if __name__=='simulation':
+    n_of_bodies = int(input("Enter number of bodies = "))
 dt = .001
 bodies = []
 
@@ -16,9 +17,7 @@ def objList():
 
 def simulate():
     for body in bodies:
-        b_i = bodies.index(body)
-        bodies_2 = bodies[b_i+1:n_of_bodies-1]
-        for b in bodies_2:
+        for b in bodies:
             gForce(body, b, dt)
     for body in bodies:
         body.vmove(dt)
