@@ -28,9 +28,12 @@ def gForce(b1, b2, dt):
     p2, m2 = b2.p, b1.m
     r = [p2[0]-p1[0], p2[1]-p1[1]]
     r_mag = mag(p1, p2)
-    F = [((G*m1*m2)/(math.pow(r_mag, 3)))*r[0],
-         ((G*m1*m2)/(math.pow(r_mag, 3)))*r[1]
-        ]
+    try:
+        F = [((G*m1*m2)/(math.pow(r_mag, 3)))*r[0],
+             ((G*m1*m2)/(math.pow(r_mag, 3)))*r[1]
+            ]
+    except ZeroDivisionError:
+        F = [0, 0]
     b1.mom[0] = F[0]*dt+b1.mom[0]
     b1.mom[1] = F[1]*dt+b1.mom[1]
         

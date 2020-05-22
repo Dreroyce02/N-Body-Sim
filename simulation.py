@@ -1,19 +1,18 @@
 from physics import Body, gForce
 import random
 
-n_of_bodies = 4
-dt = .00001
+n_of_bodies = 8
+dt = .001
 bodies = []
 
 def objList():
     for thing in range(n_of_bodies):
         b = Body(random.randint(1, 100),
-                 [random.randint(-100,100), random.randint(-100,100)],
+                 [random.randint(0,500), random.randint(0,500)],
                  [random.randint(-100,100), random.randint(-100,100)]
                  )
         bodies.append(b)
-    for body in bodies:
-        print(body.m, body.p, body.mom)
+    return bodies
 
 def simulate():
     for body in bodies:
